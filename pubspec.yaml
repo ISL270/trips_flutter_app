@@ -25,4 +25,10 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/svgs/settings.svg
+    - assets/svgs/more_menu.svg
+    - assets/svgs/chevron_down.svg
+    - assets/svgs/calendar.svg
+    - assets/svgs/plus.svg
+    - assets/svgs/filter.svg
     - trips_mock.json
