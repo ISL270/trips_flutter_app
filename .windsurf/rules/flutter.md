@@ -110,7 +110,9 @@ Each feature model should have **three versions**:
 
 ---
 
-## AI Tooling: Dart & Flutter MCP Server
+# MCP Servers for Flutter
+
+## Dart MCP Server
 Use the Dart & Flutter MCP server when you want your AI assistant to operate with your project’s **real context + official tooling**, not just suggest code.  
 
 - **Fix runtime/layout issues fast**: e.g. inspect widget tree, propose/apply minimal fixes.  
@@ -125,5 +127,18 @@ Use the Dart & Flutter MCP server when you want your AI assistant to operate wit
 **When not to use it**  
 - Large, risky rewrites → break them into smaller, reviewed steps.  
 - Clients without Tools/Resources → fall back to normal chat suggestions.  
+
+---
+
+## Figma Flutter MCP Server
+Use when you want **design → code**, driven by the real **Figma design system**:
+
+- Extract design tokens → theming  
+- Scaffold widgets & screen layout  
+- Ensure UI matches design source of truth  
+- Maintain design-code sync as Figma updates
+
+**Ideal workflow**
+> Design in Figma → Extract with MCP → AI generates Flutter UI → Dev refines logic + architecture
 
 ---
