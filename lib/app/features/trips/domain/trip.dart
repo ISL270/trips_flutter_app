@@ -24,13 +24,5 @@ class Trip extends Equatable {
   });
 
   @override
-  List<Object?> get props => [
-    id,
-    status,
-    title,
-    dates,
-    participants,
-    unfinishedTasks,
-    coverImage,
-  ];
+  List<Object?> get props => [id, status, title, dates, participants, unfinishedTasks, coverImage];
 }

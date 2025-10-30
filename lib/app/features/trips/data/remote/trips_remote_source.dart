@@ -1,5 +1,7 @@
 import 'dart:convert';
+
 import 'package:flutter/services.dart';
+
 import '../../domain/trip.dart';
 import 'trips_response_dto.dart';
 
@@ -22,16 +24,6 @@ class TripsRemoteSource {
       return response.trips.map((dto) => dto.toDomain()).toList();
     } catch (e) {
       throw Exception('Failed to load trips: $e');
-    }
-  }
-
-  /// Fetches a single trip by ID
-  Future<Trip?> getTripById(String id) async {
-    final trips = await getTrips();
-    try {
-      return trips.firstWhere((trip) => trip.id == id);
-    } catch (e) {
-      return null;
     }
   }
 }

@@ -1,5 +1,6 @@
 import 'package:intl/intl.dart';
 import 'package:json_annotation/json_annotation.dart';
+
 import '../../domain/trip_dates.dart';
 
 part 'trip_dates_dto.g.dart';
@@ -13,8 +14,7 @@ class TripDatesDto {
 
   const TripDatesDto({required this.start, required this.end});
 
-  factory TripDatesDto.fromJson(Map<String, dynamic> json) =>
-      _$TripDatesDtoFromJson(json);
+  factory TripDatesDto.fromJson(Map<String, dynamic> json) => _$TripDatesDtoFromJson(json);
 
   Map<String, dynamic> toJson() => _$TripDatesDtoToJson(this);
 
@@ -22,18 +22,12 @@ class TripDatesDto {
   /// Parses date strings in format "dd-MM-yyyy"
   TripDates toDomain() {
     final dateFormat = DateFormat('dd-MM-yyyy');
-    return TripDates(
-      start: dateFormat.parse(start),
-      end: dateFormat.parse(end),
-    );
+    return TripDates(start: dateFormat.parse(start), end: dateFormat.parse(end));
   }
 
   /// Create DTO from domain entity
   factory TripDatesDto.fromDomain(TripDates dates) {
     final dateFormat = DateFormat('dd-MM-yyyy');
-    return TripDatesDto(
-      start: dateFormat.format(dates.start),
-      end: dateFormat.format(dates.end),
-    );
+    return TripDatesDto(start: dateFormat.format(dates.start), end: dateFormat.format(dates.end));
   }
 }

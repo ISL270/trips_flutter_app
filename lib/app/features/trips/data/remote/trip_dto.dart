@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+
 import '../../domain/trip.dart';
 import 'participant_dto.dart';
 import 'trip_dates_dto.dart';
@@ -28,8 +29,7 @@ class TripDto {
     required this.coverImage,
   });
 
-  factory TripDto.fromJson(Map<String, dynamic> json) =>
-      _$TripDtoFromJson(json);
+  factory TripDto.fromJson(Map<String, dynamic> json) => _$TripDtoFromJson(json);
 
   Map<String, dynamic> toJson() => _$TripDtoToJson(this);
 
@@ -53,9 +53,7 @@ class TripDto {
       status: trip.status,
       title: trip.title,
       dates: TripDatesDto.fromDomain(trip.dates),
-      participants: trip.participants
-          .map((p) => ParticipantDto.fromDomain(p))
-          .toList(),
+      participants: trip.participants.map((p) => ParticipantDto.fromDomain(p)).toList(),
       unfinishedTasks: trip.unfinishedTasks,
       coverImage: trip.coverImage,
     );

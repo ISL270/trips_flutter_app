@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+
 import '../../domain/participant.dart';
 
 part 'participant_dto.g.dart';
@@ -12,8 +13,7 @@ class ParticipantDto {
 
   const ParticipantDto({required this.name, required this.avatarUrl});
 
-  factory ParticipantDto.fromJson(Map<String, dynamic> json) =>
-      _$ParticipantDtoFromJson(json);
+  factory ParticipantDto.fromJson(Map<String, dynamic> json) => _$ParticipantDtoFromJson(json);
 
   Map<String, dynamic> toJson() => _$ParticipantDtoToJson(this);
 
@@ -24,9 +24,6 @@ class ParticipantDto {
 
   /// Create DTO from domain entity
   factory ParticipantDto.fromDomain(Participant participant) {
-    return ParticipantDto(
-      name: participant.name,
-      avatarUrl: participant.avatarUrl,
-    );
+    return ParticipantDto(name: participant.name, avatarUrl: participant.avatarUrl);
   }
 }
