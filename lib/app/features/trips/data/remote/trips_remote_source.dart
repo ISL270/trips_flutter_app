@@ -8,11 +8,15 @@ import 'trips_response_dto.dart';
 /// Remote data source for trips
 /// Loads mock data from trips_mock.json asset
 class TripsRemoteSource {
+  final AssetBundle _assetBundle;
+
+  TripsRemoteSource({AssetBundle? assetBundle}) : _assetBundle = assetBundle ?? rootBundle;
+
   /// Fetches all trips from the mock JSON file
   Future<List<Trip>> getTrips() async {
     try {
       // Load JSON from assets
-      final jsonString = await rootBundle.loadString('trips_mock.json');
+      final jsonString = await _assetBundle.loadString('trips_mock.json');
 
       // Parse JSON
       final jsonMap = json.decode(jsonString) as Map<String, dynamic>;
