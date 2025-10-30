@@ -1,0 +1,37 @@
+import 'dart:convert';
+import 'package:flutter/services.dart';
+import '../../domain/trip.dart';
+import 'trips_response_dto.dart';
+
+/// Remote data source for trips
+/// Loads mock data from trips_mock.json asset
+class TripsRemoteSource {
+  /// Fetches all trips from the mock JSON file
+  Future<List<Trip>> getTrips() async {
+    try {
+      // Load JSON from assets
+      final jsonString = await rootBundle.loadString('trips_mock.json');
+
+      // Parse JSON
+      final jsonMap = json.decode(jsonString) as Map<String, dynamic>;
+
+      // Deserialize to DTO
+      final response = TripsResponseDto.fromJson(jsonMap);
+
+      // Convert DTOs to domain entities
+      return response.trips.map((dto) => dto.toDomain()).toList();
+    } catch (e) {
+      throw Exception('Failed to load trips: $e');
+    }
+  }
+
+  /// Fetches a single trip by ID
+  Future<Trip?> getTripById(String id) async {
+    final trips = await getTrips();
+    try {
+      return trips.firstWhere((trip) => trip.id == id);
+    } catch (e) {
+      return null;
+    }
+  }
+}
