@@ -7,4 +7,6 @@ class SvgAssets {
   static const String calendar = 'assets/svgs/calendar.svg';
   static const String plus = 'assets/svgs/plus.svg';
   static const String filter = 'assets/svgs/filter.svg';
+  static const String logo = 'assets/svgs/logo.svg';
+  static const String menu = 'assets/svgs/linear_interface_menu.svg';
 }

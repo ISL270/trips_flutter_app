@@ -13,6 +13,7 @@ dependencies:
   json_annotation: ^4.9.0
   intl: ^0.20.2
   equatable: ^2.0.7
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
@@ -25,10 +26,12 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/svgs/settings.svg
-    - assets/svgs/more_menu.svg
-    - assets/svgs/chevron_down.svg
     - assets/svgs/calendar.svg
-    - assets/svgs/plus.svg
+    - assets/svgs/chevron_down.svg
     - assets/svgs/filter.svg
+    - assets/svgs/logo.svg
+    - assets/svgs/linear_interface_menu.svg
+    - assets/svgs/more_menu.svg
+    - assets/svgs/plus.svg
+    - assets/svgs/settings.svg
     - trips_mock.json

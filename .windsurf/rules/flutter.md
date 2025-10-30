@@ -142,3 +142,47 @@ Use when you want **design → code**, driven by the real **Figma design system*
 > Design in Figma → Extract with MCP → AI generates Flutter UI → Dev refines logic + architecture
 
 ---
+
+# Code Quality Rules
+
+## Dart Style & Analysis
+
+### Line Length
+Use **maximum line length = 100** characters  
+→ Update `.editorconfig` / `analysis_options.yaml` accordingly
+
+```yaml
+# analysis_options.yaml example
+code-style:
+  line-length: 100
+```
+
+---
+
+### Color API (Flutter ≥ 3.22)
+Avoid using:
+
+Deprecated  
+```dart
+color.withOpacity(0.5);
+```
+
+Use:  
+```dart
+color.withValues(alpha: 0.5);
+```
+
+---
+
+### Background was deprecated in favor of surface for improved Material 3 consistency.
+Avoid using:
+
+Deprecated  
+```dart
+color.withOpacity(0.5);
+```
+
+Use:  
+```dart
+theme.colorScheme.surface
+```
