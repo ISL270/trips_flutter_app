@@ -1,8 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trips_flutter_app/app/core/constants/app_colors.dart';
 import 'package:trips_flutter_app/app/core/constants/svg_assets.dart';
+import 'package:trips_flutter_app/app/features/trips/presentation/widgets/app_bar/profile_avatar.dart';
 
 /// Mobile app bar component matching Figma design
 /// Dimensions: 375×72px with 16px padding
@@ -62,40 +62,7 @@ class MobileAppBar extends StatelessWidget implements PreferredSizeWidget {
                   Container(width: 1, height: 22, color: AppColors.white.withValues(alpha: 0.2)),
                   const SizedBox(width: 11),
                   // Avatar/Profile (32×32px)
-                  ClipOval(
-                    child: CachedNetworkImage(
-                      imageUrl: 'https://avatar.iran.liara.run/public/boy?username=user8',
-                      width: 32,
-                      height: 32,
-                      fit: BoxFit.cover,
-                      placeholder: (context, url) => Container(
-                        width: 32,
-                        height: 32,
-                        color: AppColors.primary,
-                        child: const Center(
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            valueColor: AlwaysStoppedAnimation<Color>(AppColors.white),
-                          ),
-                        ),
-                      ),
-                      errorWidget: (context, url, error) => Container(
-                        width: 32,
-                        height: 32,
-                        decoration: BoxDecoration(shape: BoxShape.circle, color: AppColors.primary),
-                        child: const Center(
-                          child: Text(
-                            'U',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  const ProfileAvatar(),
                 ],
               ),
             ],
