@@ -76,15 +76,7 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
                   ),
                   const SizedBox(width: 22),
                   // Settings icon (24×24px)
-                  SvgPicture.asset(
-                    SvgAssets.settings,
-                    width: 24,
-                    height: 24,
-                    colorFilter: ColorFilter.mode(
-                      Theme.of(context).colorScheme.onSurface,
-                      BlendMode.srcIn,
-                    ),
-                  ),
+                  SvgIcon(iconPath: SvgAssets.settings),
 
                   const SizedBox(width: 15),
 
@@ -97,16 +89,8 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
                       Theme.of(context).colorScheme.onSurface,
                       BlendMode.srcIn,
                     ),
-                  ),
-                  const SizedBox(width: 24),
-
-                  // Vertical divider
-                  Container(
-                    width: 1,
-                    height: 40,
-                    color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.2),
-                  ),
-                  const SizedBox(width: 24),
+                  SvgIcon(iconPath: SvgAssets.bell),
+                  const SizedBox(width: 10),
                   // Profile section (124×32px)
                   Row(
                     mainAxisSize: MainAxisSize.min,
@@ -124,15 +108,7 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
                       ),
                       const SizedBox(width: 8),
                       // Dropdown icon
-                      SvgPicture.asset(
-                        SvgAssets.chevronDown,
-                        width: 22,
-                        height: 22,
-                        colorFilter: ColorFilter.mode(
-                          Theme.of(context).colorScheme.onSurface,
-                          BlendMode.srcIn,
-                        ),
-                      ),
+                      SvgIcon(iconPath: SvgAssets.chevronDown, size: 22),
                     ],
                   ),
                 ],

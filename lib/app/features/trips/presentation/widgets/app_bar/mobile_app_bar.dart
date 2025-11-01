@@ -26,15 +26,7 @@ class MobileAppBar extends StatelessWidget implements PreferredSizeWidget {
               Row(
                 children: [
                   // Menu icon (24×24px)
-                  SvgPicture.asset(
-                    SvgAssets.menu,
-                    width: 24,
-                    height: 24,
-                    colorFilter: ColorFilter.mode(
-                      Theme.of(context).colorScheme.onSurface,
-                      BlendMode.srcIn,
-                    ),
-                  ),
+                  SvgIcon(iconPath: SvgAssets.menu),
                   const SizedBox(width: 16),
                   // Logo (82×40px)
                   SvgPicture.asset(SvgAssets.logo, width: 82, height: 40),
@@ -45,27 +37,10 @@ class MobileAppBar extends StatelessWidget implements PreferredSizeWidget {
               Row(
                 children: [
                   // Settings icon (24×24px)
-                  SvgPicture.asset(
-                    SvgAssets.settings,
-                    width: 24,
-                    height: 24,
-                    colorFilter: ColorFilter.mode(
-                      Theme.of(context).colorScheme.onSurface,
-                      BlendMode.srcIn,
-                    ),
-                  ),
+                  SvgIcon(iconPath: SvgAssets.settings),
                   const SizedBox(width: 12),
                   // More menu icon (24×24px)
-                  SvgPicture.asset(
-                    SvgAssets.bell,
-                    width: 24,
-                    height: 24,
-                    colorFilter: ColorFilter.mode(
-                      Theme.of(context).colorScheme.onSurface,
-                      BlendMode.srcIn,
-                    ),
-                  ),
-                  const SizedBox(width: 12),
+                  SvgIcon(iconPath: SvgAssets.bell),
                   // Vertical divider (22px height)
                   Container(
                     width: 1,
