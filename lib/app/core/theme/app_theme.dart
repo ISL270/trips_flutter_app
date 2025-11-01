@@ -14,9 +14,8 @@ class AppTheme {
       // Color scheme
       colorScheme: const ColorScheme.dark(
         primary: AppColors.primary,
-        secondary: AppColors.secondary,
         surface: AppColors.background,
-        surfaceContainerHighest: AppColors.cardBackground,
+        surfaceContainerHighest: AppColors.secondaryBackground,
         onSurface: AppColors.white,
         onPrimary: AppColors.black,
       ),
@@ -26,7 +25,7 @@ class AppTheme {
 
       // Card theme
       cardTheme: const CardThemeData(
-        color: AppColors.cardBackground,
+        color: AppColors.secondaryBackground,
         elevation: 0,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
       ),
@@ -148,7 +147,7 @@ class AppTheme {
       // Input decoration theme
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: AppColors.cardBackground,
+        fillColor: AppColors.secondaryBackground,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide.none,
