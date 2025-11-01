@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trips_flutter_app/app/core/constants/svg_assets.dart';
+import 'package:trips_flutter_app/app/core/widgets/svg_icon.dart';
+import 'package:trips_flutter_app/app/core/widgets/vertical_divider_line.dart';
 import 'package:trips_flutter_app/app/features/trips/presentation/widgets/app_bar/profile_avatar.dart';
 
 /// Mobile app bar component matching Figma design
@@ -42,12 +44,7 @@ class MobileAppBar extends StatelessWidget implements PreferredSizeWidget {
                   // More menu icon (24×24px)
                   SvgIcon(iconPath: SvgAssets.bell),
                   // Vertical divider (22px height)
-                  Container(
-                    width: 1,
-                    height: 22,
-                    color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.2),
-                  ),
-                  const SizedBox(width: 11),
+                  const VerticalDividerLine(height: 22),
                   // Avatar/Profile (32×32px)
                   const ProfileAvatar(),
                 ],

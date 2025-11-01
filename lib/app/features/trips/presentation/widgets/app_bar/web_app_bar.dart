@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trips_flutter_app/app/core/constants/svg_assets.dart';
+import 'package:trips_flutter_app/app/core/widgets/svg_icon.dart';
+import 'package:trips_flutter_app/app/core/widgets/vertical_divider_line.dart';
 import 'package:trips_flutter_app/app/features/trips/presentation/widgets/app_bar/profile_avatar.dart';
 
 /// Web app bar component matching Figma design
@@ -66,30 +68,21 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
                       Tab(text: 'Analytics'),
                     ],
                   ),
-                  const SizedBox(width: 12),
 
                   // Vertical divider
-                  Container(
-                    width: 1,
-                    height: 40,
-                    color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.2),
-                  ),
-                  const SizedBox(width: 22),
+                  const VerticalDividerLine(height: 40),
+                  const SizedBox(width: 8),
                   // Settings icon (24×24px)
                   SvgIcon(iconPath: SvgAssets.settings),
 
                   const SizedBox(width: 15),
 
                   // Bell icon (24×24px)
-                  SvgPicture.asset(
-                    SvgAssets.bell,
-                    width: 24,
-                    height: 24,
-                    colorFilter: ColorFilter.mode(
-                      Theme.of(context).colorScheme.onSurface,
-                      BlendMode.srcIn,
-                    ),
                   SvgIcon(iconPath: SvgAssets.bell),
+                  const SizedBox(width: 10),
+
+                  // Vertical divider
+                  const VerticalDividerLine(height: 40),
                   const SizedBox(width: 10),
                   // Profile section (124×32px)
                   Row(
