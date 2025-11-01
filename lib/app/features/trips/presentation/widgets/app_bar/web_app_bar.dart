@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:trips_flutter_app/app/core/constants/app_colors.dart';
 import 'package:trips_flutter_app/app/core/constants/svg_assets.dart';
 import 'package:trips_flutter_app/app/features/trips/presentation/widgets/app_bar/profile_avatar.dart';
 
@@ -50,17 +49,12 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
                   TabBar(
                     controller: _tabController,
                     isScrollable: true,
-                    labelColor: AppColors.primary,
+                    labelColor: Theme.of(context).colorScheme.onSurface,
                     unselectedLabelColor: Theme.of(
                       context,
                     ).colorScheme.onSurface.withValues(alpha: 0.7),
-                    labelStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-                    unselectedLabelStyle: const TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                    ),
                     labelPadding: const EdgeInsets.symmetric(horizontal: 18),
-                    indicatorColor: AppColors.primary,
+                    indicatorColor: Theme.of(context).colorScheme.primary,
                     indicatorSize: TabBarIndicatorSize.label,
                     indicatorWeight: 2,
                     dividerColor: Colors.transparent,
@@ -92,7 +86,7 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
                     ),
                   ),
 
-                  const SizedBox(width: 22),
+                  const SizedBox(width: 15),
 
                   // Bell icon (24×24px)
                   SvgPicture.asset(
@@ -125,13 +119,7 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Eslam Ashraf',
-                            style: TextStyle(
-                              color: Theme.of(context).colorScheme.onSurface,
-                              fontSize: 14,
-                            ),
-                          ),
+                          Text('Eslam Ashraf', style: Theme.of(context).textTheme.bodyMedium),
                         ],
                       ),
                       const SizedBox(width: 8),

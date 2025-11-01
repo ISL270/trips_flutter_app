@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:trips_flutter_app/app/core/constants/app_colors.dart';
 
 /// Reusable circular profile avatar widget with loading and error states
 /// Fixed size: 32×32px
@@ -18,22 +17,29 @@ class ProfileAvatar extends StatelessWidget {
         placeholder: (context, url) => Container(
           width: 32,
           height: 32,
-          color: AppColors.primary,
-          child: const Center(
+          color: Theme.of(context).colorScheme.primary,
+          child: Center(
             child: CircularProgressIndicator(
               strokeWidth: 2,
-              valueColor: AlwaysStoppedAnimation<Color>(AppColors.white),
+              valueColor: AlwaysStoppedAnimation<Color>(
+                Theme.of(context).colorScheme.onPrimary,
+              ),
             ),
           ),
         ),
         errorWidget: (context, url, error) => Container(
           width: 32,
           height: 32,
-          decoration: const BoxDecoration(shape: BoxShape.circle, color: AppColors.primary),
-          child: const Center(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: Theme.of(context).colorScheme.primary,
+          ),
+          child: Center(
             child: Text(
               'U',
-              style: TextStyle(color: AppColors.white, fontSize: 14, fontWeight: FontWeight.w600),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: Theme.of(context).colorScheme.onPrimary,
+              ),
             ),
           ),
         ),

@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:trips_flutter_app/app/core/constants/app_colors.dart';
 
 /// App theme configuration (dark mode only)
+/// 
+/// Typography System based on Figma specifications:
+/// - displaySmall: 32px Regular - Page headings
+/// - headlineSmall: 18px Regular - Card/item titles
+/// - titleLarge: 18px Regular - Alternative card titles
+/// - bodyMedium: 14px Regular - Body text, labels, profile names
+/// - bodySmall: 12px Regular - Captions, dates, metadata
+/// - labelLarge: 14px Medium - Buttons, active tabs
+/// - labelMedium: 14px Regular - Inactive tabs
+/// - labelSmall: 12px Regular - Small captions
+/// 
+/// All text uses Inter font family with negative letter spacing
 class AppTheme {
   AppTheme._();
 
@@ -15,6 +28,9 @@ class AppTheme {
         primary: AppColors.primary,
         secondary: AppColors.secondary,
         surface: AppColors.background,
+        surfaceContainerHighest: AppColors.cardBackground,
+        onSurface: AppColors.white,
+        onPrimary: AppColors.black,
       ),
 
       // Scaffold
@@ -28,38 +44,90 @@ class AppTheme {
       ),
 
       // AppBar theme
-      appBarTheme: const AppBarTheme(
+      appBarTheme: AppBarTheme(
         backgroundColor: AppColors.background,
         elevation: 0,
         centerTitle: false,
-        iconTheme: IconThemeData(color: AppColors.white),
-        titleTextStyle: TextStyle(
+        iconTheme: const IconThemeData(color: AppColors.white),
+        titleTextStyle: GoogleFonts.inter(
           color: AppColors.white,
           fontSize: 20,
           fontWeight: FontWeight.w600,
         ),
       ),
 
-      // Text theme
-      textTheme: const TextTheme(
-        displayLarge: TextStyle(color: AppColors.white, fontSize: 32, fontWeight: FontWeight.bold),
-        displayMedium: TextStyle(color: AppColors.white, fontSize: 28, fontWeight: FontWeight.bold),
-        displaySmall: TextStyle(color: AppColors.white, fontSize: 24, fontWeight: FontWeight.bold),
-        headlineMedium: TextStyle(
+      // Text theme - Based on Figma specifications
+      textTheme: TextTheme(
+        // Page Heading (32px Regular) - Figma Node 1:389
+        displaySmall: GoogleFonts.inter(
+          fontSize: 32,
+          fontWeight: FontWeight.w400,
+          height: 38.73 / 32,
           color: AppColors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
         ),
-        headlineSmall: TextStyle(color: AppColors.white, fontSize: 18, fontWeight: FontWeight.w600),
-        titleLarge: TextStyle(color: AppColors.white, fontSize: 16, fontWeight: FontWeight.w600),
-        titleMedium: TextStyle(color: AppColors.white, fontSize: 14, fontWeight: FontWeight.w500),
-        titleSmall: TextStyle(color: AppColors.white, fontSize: 12, fontWeight: FontWeight.w500),
-        bodyLarge: TextStyle(color: AppColors.white, fontSize: 16, fontWeight: FontWeight.normal),
-        bodyMedium: TextStyle(color: AppColors.white, fontSize: 14, fontWeight: FontWeight.normal),
-        bodySmall: TextStyle(color: AppColors.white, fontSize: 12, fontWeight: FontWeight.normal),
-        labelLarge: TextStyle(color: AppColors.white, fontSize: 14, fontWeight: FontWeight.w500),
-        labelMedium: TextStyle(color: AppColors.white, fontSize: 12, fontWeight: FontWeight.w500),
-        labelSmall: TextStyle(color: AppColors.white, fontSize: 10, fontWeight: FontWeight.w500),
+
+        // Card/Item Title (18px Regular) - Figma Node 1:418
+        headlineSmall: GoogleFonts.inter(
+          fontSize: 18,
+          fontWeight: FontWeight.w400,
+          height: 26 / 18,
+          letterSpacing: -0.54,
+          color: AppColors.white,
+        ),
+
+        // Alternative card title
+        titleLarge: GoogleFonts.inter(
+          fontSize: 18,
+          fontWeight: FontWeight.w400,
+          height: 26 / 18,
+          letterSpacing: -0.54,
+          color: AppColors.white,
+        ),
+
+        // Body Text / Profile Name (14px Regular) - Figma Nodes 1:382, 1:414
+        bodyMedium: GoogleFonts.inter(
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+          height: 22 / 14,
+          letterSpacing: -0.42,
+          color: AppColors.white,
+        ),
+
+        // Caption / Date Text (12px Regular) - Figma Nodes 1:420, 1:437
+        bodySmall: GoogleFonts.inter(
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+          height: 18 / 12,
+          letterSpacing: -0.36,
+          color: AppColors.white,
+        ),
+
+        // Button Text / Active Tab (14px Medium) - Figma Nodes 1:398, 1:355
+        labelLarge: GoogleFonts.inter(
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          height: 18 / 14,
+          letterSpacing: -0.42,
+          color: AppColors.white,
+        ),
+
+        // Label / Inactive Tab (14px Regular) - Figma Node 1:357
+        labelMedium: GoogleFonts.inter(
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+          height: 22 / 14,
+          letterSpacing: -0.42,
+          color: AppColors.white,
+        ),
+
+        // Small Caption (12px Regular)
+        labelSmall: GoogleFonts.inter(
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+          height: 18 / 12,
+          letterSpacing: -0.36,
+          color: AppColors.white,
+        ),
       ),
 
       // Icon theme
@@ -73,7 +141,11 @@ class AppTheme {
           elevation: 0,
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          textStyle: GoogleFonts.inter(
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            letterSpacing: -0.42,
+          ),
         ),
       ),
 
@@ -81,7 +153,11 @@ class AppTheme {
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           foregroundColor: AppColors.primary,
-          textStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+          textStyle: GoogleFonts.inter(
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            letterSpacing: -0.42,
+          ),
         ),
       ),
 
@@ -91,7 +167,11 @@ class AppTheme {
           foregroundColor: AppColors.primary,
           side: const BorderSide(color: AppColors.primary),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          textStyle: GoogleFonts.inter(
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            letterSpacing: -0.42,
+          ),
         ),
       ),
 
@@ -120,7 +200,12 @@ class AppTheme {
           borderSide: const BorderSide(color: Colors.red, width: 2),
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-        hintStyle: TextStyle(color: AppColors.white.withValues(alpha: 0.5), fontSize: 14),
+        hintStyle: GoogleFonts.inter(
+          color: AppColors.white.withValues(alpha: 0.5),
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+          letterSpacing: -0.42,
+        ),
       ),
 
       // Divider theme
@@ -128,6 +213,24 @@ class AppTheme {
         color: AppColors.white.withValues(alpha: 0.1),
         thickness: 1,
         space: 1,
+      ),
+
+      // TabBar theme
+      tabBarTheme: TabBarThemeData(
+        // Active tab - uses labelLarge (14px Medium)
+        labelStyle: GoogleFonts.inter(
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          letterSpacing: -0.42,
+          height: 22 / 14,
+        ),
+        // Inactive tab - uses labelMedium (14px Regular)
+        unselectedLabelStyle: GoogleFonts.inter(
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+          letterSpacing: -0.42,
+          height: 22 / 14,
+        ),
       ),
     );
   }
