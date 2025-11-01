@@ -3,18 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:trips_flutter_app/app/core/constants/app_colors.dart';
 
 /// App theme configuration (dark mode only)
-/// 
-/// Typography System based on Figma specifications:
-/// - displaySmall: 32px Regular - Page headings
-/// - headlineSmall: 18px Regular - Card/item titles
-/// - titleLarge: 18px Regular - Alternative card titles
-/// - bodyMedium: 14px Regular - Body text, labels, profile names
-/// - bodySmall: 12px Regular - Captions, dates, metadata
-/// - labelLarge: 14px Medium - Buttons, active tabs
-/// - labelMedium: 14px Regular - Inactive tabs
-/// - labelSmall: 12px Regular - Small captions
-/// 
-/// All text uses Inter font family with negative letter spacing
 class AppTheme {
   AppTheme._();
 
@@ -61,22 +49,13 @@ class AppTheme {
         // Page Heading (32px Regular) - Figma Node 1:389
         displaySmall: GoogleFonts.inter(
           fontSize: 32,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w300,
           height: 38.73 / 32,
           color: AppColors.white,
         ),
 
         // Card/Item Title (18px Regular) - Figma Node 1:418
         headlineSmall: GoogleFonts.inter(
-          fontSize: 18,
-          fontWeight: FontWeight.w400,
-          height: 26 / 18,
-          letterSpacing: -0.54,
-          color: AppColors.white,
-        ),
-
-        // Alternative card title
-        titleLarge: GoogleFonts.inter(
           fontSize: 18,
           fontWeight: FontWeight.w400,
           height: 26 / 18,
@@ -105,17 +84,8 @@ class AppTheme {
         // Button Text / Active Tab (14px Medium) - Figma Nodes 1:398, 1:355
         labelLarge: GoogleFonts.inter(
           fontSize: 14,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w600,
           height: 18 / 14,
-          letterSpacing: -0.42,
-          color: AppColors.white,
-        ),
-
-        // Label / Inactive Tab (14px Regular) - Figma Node 1:357
-        labelMedium: GoogleFonts.inter(
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
-          height: 22 / 14,
           letterSpacing: -0.42,
           color: AppColors.white,
         ),
@@ -217,14 +187,14 @@ class AppTheme {
 
       // TabBar theme
       tabBarTheme: TabBarThemeData(
-        // Active tab - uses labelLarge (14px Medium)
+        // Active tab (14px Medium)
         labelStyle: GoogleFonts.inter(
           fontSize: 14,
           fontWeight: FontWeight.w500,
           letterSpacing: -0.42,
           height: 22 / 14,
         ),
-        // Inactive tab - uses labelMedium (14px Regular)
+        // Inactive tab (14px Regular)
         unselectedLabelStyle: GoogleFonts.inter(
           fontSize: 14,
           fontWeight: FontWeight.w400,
