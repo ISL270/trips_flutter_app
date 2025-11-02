@@ -4,6 +4,7 @@ import 'package:trips_flutter_app/app/features/trips/data/remote/trips_remote_so
 import 'package:trips_flutter_app/app/features/trips/domain/participant.dart';
 import 'package:trips_flutter_app/app/features/trips/domain/trip.dart';
 import 'package:trips_flutter_app/app/features/trips/domain/trip_dates.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/trip_status.dart';
 import 'package:trips_flutter_app/app/features/trips/domain/trips_repository.dart';
 
 // Mock class for TripsRemoteSource
@@ -22,7 +23,7 @@ void main() {
     final mockTrips = [
       Trip(
         id: '1',
-        status: 'Proposal Sent',
+        status: TripStatus.proposalSent,
         title: 'Banff National Park Adventure',
         dates: TripDates(start: DateTime(2024, 1, 16), end: DateTime(2024, 1, 20)),
         participants: const [
@@ -34,7 +35,7 @@ void main() {
       ),
       Trip(
         id: '2',
-        status: 'Pending Approval',
+        status: TripStatus.pendingApproval,
         title: 'Santorini Dream Escape',
         dates: TripDates(start: DateTime(2024, 1, 16), end: DateTime(2024, 1, 20)),
         participants: const [
@@ -45,7 +46,7 @@ void main() {
       ),
       Trip(
         id: '3',
-        status: 'Proposal Sent',
+        status: TripStatus.proposalSent,
         title: 'Maldives Island Retreat',
         dates: TripDates(start: DateTime(2024, 2, 1), end: DateTime(2024, 2, 5)),
         participants: const [
@@ -110,7 +111,7 @@ void main() {
       expect(result.length, 3);
       expect(result[0].id, '1');
       expect(result[0].title, 'Banff National Park Adventure');
-      expect(result[0].status, 'Proposal Sent');
+      expect(result[0].status, TripStatus.proposalSent);
       expect(result[0].participants.length, 2);
       expect(result[0].dates.durationInDays, 5);
       expect(result[1].id, '2');

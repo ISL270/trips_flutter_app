@@ -5,6 +5,7 @@ import 'package:trips_flutter_app/app/features/trips/data/remote/trips_remote_so
 import 'package:trips_flutter_app/app/features/trips/domain/participant.dart';
 import 'package:trips_flutter_app/app/features/trips/domain/trip.dart';
 import 'package:trips_flutter_app/app/features/trips/domain/trip_dates.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/trip_status.dart';
 
 // Mock class for AssetBundle
 class MockAssetBundle extends Mock implements AssetBundle {}
@@ -69,7 +70,7 @@ void main() {
 
       // Verify first trip
       expect(result[0].id, '1');
-      expect(result[0].status, 'Proposal Sent');
+      expect(result[0].status, TripStatus.proposalSent);
       expect(result[0].title, 'Banff National Park Adventure');
       expect(result[0].unfinishedTasks, 4);
       expect(result[0].coverImage, 'https://example.com/cover.jpg');
@@ -84,7 +85,7 @@ void main() {
 
       // Verify second trip
       expect(result[1].id, '2');
-      expect(result[1].status, 'Pending Approval');
+      expect(result[1].status, TripStatus.pendingApproval);
       expect(result[1].title, 'Santorini Dream Escape');
       expect(result[1].participants.length, 1);
     });
