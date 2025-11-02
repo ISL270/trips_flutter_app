@@ -53,10 +53,10 @@ class AppTheme {
           color: AppColors.white,
         ),
 
-        // Card/Item Title (18px Regular) - Figma Node 1:418
+        // Card/Item Title (22px Regular) - Figma Node 1:418
         headlineSmall: GoogleFonts.inter(
-          fontSize: 18,
-          fontWeight: FontWeight.w400,
+          fontSize: 22,
+          fontWeight: FontWeight.w300,
           height: 26 / 18,
           letterSpacing: -0.54,
           color: AppColors.white,
@@ -67,16 +67,7 @@ class AppTheme {
           fontSize: 14,
           fontWeight: FontWeight.w400,
           height: 22 / 14,
-          letterSpacing: -0.42,
-          color: AppColors.white,
-        ),
-
-        // Caption / Date Text (12px Regular) - Figma Nodes 1:420, 1:437
-        bodySmall: GoogleFonts.inter(
-          fontSize: 12,
-          fontWeight: FontWeight.w400,
-          height: 18 / 12,
-          letterSpacing: -0.36,
+          letterSpacing: -0.1,
           color: AppColors.white,
         ),
 
@@ -89,8 +80,8 @@ class AppTheme {
           color: AppColors.white,
         ),
 
-        // Small Caption (12px Regular)
-        labelSmall: GoogleFonts.inter(
+        // Caption / Date Text / Small Labels (12px Regular) - Figma Nodes 1:420, 1:437
+        bodySmall: GoogleFonts.inter(
           fontSize: 12,
           fontWeight: FontWeight.w400,
           height: 18 / 12,
@@ -179,7 +170,7 @@ class AppTheme {
 
       // Divider theme
       dividerTheme: DividerThemeData(
-        color: AppColors.white.withValues(alpha: 0.1),
+        color: AppColors.white.withValues(alpha: 0.2),
         thickness: 1,
         space: 1,
       ),
