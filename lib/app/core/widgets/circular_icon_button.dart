@@ -5,18 +5,20 @@ class CircularIconButton extends StatelessWidget {
   final String iconPath;
   final double diameter;
   final VoidCallback? onPressed;
+  final Color? backgroundColor;
 
   const CircularIconButton({
     super.key,
     required this.iconPath,
     this.diameter = 48,
     this.onPressed,
+    this.backgroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
     final iconSize = diameter / 2;
-    
+
     return SizedBox(
       width: diameter,
       height: diameter,
@@ -25,12 +27,9 @@ class CircularIconButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),
           padding: EdgeInsets.zero,
-          backgroundColor: Theme.of(context).colorScheme.surfaceContainerHighest,
+          backgroundColor: backgroundColor ?? Theme.of(context).colorScheme.surfaceContainerHighest,
         ),
-        child: SvgIcon(
-          iconPath: iconPath,
-          size: iconSize,
-        ),
+        child: SvgIcon(iconPath: iconPath, size: iconSize),
       ),
     );
   }
