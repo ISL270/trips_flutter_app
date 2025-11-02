@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trips_flutter_app/app/core/constants/svg_assets.dart';
+import 'package:trips_flutter_app/app/core/widgets/profile_avatar.dart';
 import 'package:trips_flutter_app/app/core/widgets/svg_icon.dart';
 import 'package:trips_flutter_app/app/core/widgets/vertical_divider_line.dart';
-import 'package:trips_flutter_app/app/features/trips/presentation/widgets/app_bar/profile_avatar.dart';
 
 /// Web app bar component matching Figma design
 /// Dimensions: 1440×76px with 80px horizontal padding
@@ -89,7 +89,10 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       // Profile avatar (32×32px)
-                      const ProfileAvatar(),
+                      const ProfileAvatar(
+                        size: 40,
+                        imageUrl: 'https://avatar.iran.liara.run/public/boy?username=user8',
+                      ),
                       const SizedBox(width: 12),
                       // Name and dropdown
                       Column(
@@ -109,11 +112,7 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
             ],
           ),
         ),
-        Divider(
-          color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.2),
-          thickness: 1,
-          height: 1,
-        ),
+        Divider(),
       ],
     );
   }

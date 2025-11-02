@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trips_flutter_app/app/core/constants/svg_assets.dart';
+import 'package:trips_flutter_app/app/core/widgets/profile_avatar.dart';
 import 'package:trips_flutter_app/app/core/widgets/svg_icon.dart';
 import 'package:trips_flutter_app/app/core/widgets/vertical_divider_line.dart';
-import 'package:trips_flutter_app/app/features/trips/presentation/widgets/app_bar/profile_avatar.dart';
 
 /// Mobile app bar component matching Figma design
 /// Dimensions: 375×72px with 16px padding
@@ -46,16 +46,17 @@ class MobileAppBar extends StatelessWidget implements PreferredSizeWidget {
                   // Vertical divider (22px height)
                   const VerticalDividerLine(height: 22),
                   // Avatar/Profile (32×32px)
-                  const ProfileAvatar(),
+                  const ProfileAvatar(
+                    size: 40,
+
+                    imageUrl: 'https://avatar.iran.liara.run/public/boy?username=user8',
+                  ),
                 ],
               ),
             ],
           ),
         ),
-        Divider(
-          color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.2),
-          thickness: 1,
-        ),
+        Divider(),
       ],
     );
   }
