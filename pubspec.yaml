@@ -18,6 +18,7 @@ dependencies:
   google_fonts: ^6.2.1
   flutter_riverpod: ^3.0.0
   riverpod_annotation: ^3.0.0
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -29,6 +30,8 @@ dev_dependencies:
   riverpod_generator: ^3.0.0
   riverpod_lint: ^3.0.0
   flutter_gen_runner: ^5.7.0
+  flutter_native_splash: ^2.4.1
+  flutter_launcher_icons: ^0.14.4
 
 flutter:
   uses-material-design: true
@@ -42,3 +45,25 @@ flutter_gen:
   line_length: 100
   integrations:
     flutter_svg: true
+
+# Flutter Native Splash Configuration
+flutter_native_splash:
+  color: "#000000"  # Background color: 0xFF000000
+  image: assets/images/logo.png
+  web: true
+  android: true
+  ios: true
+  android_12:
+    color: "#000000"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/logo.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#000000"
+  adaptive_icon_foreground: "assets/images/logo.png"
+  web:
+    generate: true
+    image_path: "assets/images/logo.png"
