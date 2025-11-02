@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:trips_flutter_app/app/core/constants/svg_assets.dart';
+import 'package:trips_flutter_app/app/core/constants/assets.gen.dart';
 import 'package:trips_flutter_app/app/core/widgets/profile_avatar.dart';
 import 'package:trips_flutter_app/app/core/widgets/svg_icon.dart';
 import 'package:trips_flutter_app/app/core/widgets/vertical_divider_line.dart';
 
 /// Web app bar component matching Figma design
-/// Dimensions: 1440×76px with 80px horizontal padding
 class WebAppBar extends StatefulWidget {
   const WebAppBar({super.key});
 
@@ -41,7 +39,7 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // Logo (82×40px)
-              SvgPicture.asset(SvgAssets.logo, width: 82, height: 40),
+              Assets.images.logo.image(width: 82, height: 40),
 
               // Right section: Icons + Profile
               Row(
@@ -73,12 +71,12 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
                   const VerticalDividerLine(height: 40),
                   const SizedBox(width: 8),
                   // Settings icon (24×24px)
-                  SvgIcon(iconPath: SvgAssets.settings),
+                  SvgIcon(iconPath: Assets.svgs.settings.path),
 
                   const SizedBox(width: 15),
 
                   // Bell icon (24×24px)
-                  SvgIcon(iconPath: SvgAssets.bell),
+                  SvgIcon(iconPath: Assets.svgs.bell.path),
                   const SizedBox(width: 10),
 
                   // Vertical divider
@@ -104,7 +102,7 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
                       ),
                       const SizedBox(width: 8),
                       // Dropdown icon
-                      SvgIcon(iconPath: SvgAssets.chevronDown, size: 22),
+                      SvgIcon(iconPath: Assets.svgs.chevronDown.path, size: 22),
                     ],
                   ),
                 ],

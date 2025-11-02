@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:trips_flutter_app/app/core/constants/svg_assets.dart';
+import 'package:trips_flutter_app/app/core/constants/assets.gen.dart';
 import 'package:trips_flutter_app/app/core/widgets/profile_avatar.dart';
 import 'package:trips_flutter_app/app/core/widgets/svg_icon.dart';
 import 'package:trips_flutter_app/app/core/widgets/vertical_divider_line.dart';
 
 /// Mobile app bar component matching Figma design
-/// Dimensions: 375×72px with 16px padding
 class MobileAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MobileAppBar({super.key});
 
@@ -28,10 +26,10 @@ class MobileAppBar extends StatelessWidget implements PreferredSizeWidget {
               Row(
                 children: [
                   // Menu icon (24×24px)
-                  SvgIcon(iconPath: SvgAssets.menu),
+                  SvgIcon(iconPath: Assets.svgs.menu.path),
                   const SizedBox(width: 16),
                   // Logo (82×40px)
-                  SvgPicture.asset(SvgAssets.logo, width: 82, height: 40),
+                  Assets.images.logo.image(width: 82, height: 40),
                 ],
               ),
 
@@ -39,10 +37,10 @@ class MobileAppBar extends StatelessWidget implements PreferredSizeWidget {
               Row(
                 children: [
                   // Settings icon (24×24px)
-                  SvgIcon(iconPath: SvgAssets.settings),
+                  SvgIcon(iconPath: Assets.svgs.settings.path),
                   const SizedBox(width: 12),
                   // More menu icon (24×24px)
-                  SvgIcon(iconPath: SvgAssets.bell),
+                  SvgIcon(iconPath: Assets.svgs.bell.path),
                   // Vertical divider (22px height)
                   const VerticalDividerLine(height: 22),
                   // Avatar/Profile (32×32px)

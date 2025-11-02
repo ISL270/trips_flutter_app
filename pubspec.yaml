@@ -28,17 +28,17 @@ dev_dependencies:
   mocktail: ^1.0.4
   riverpod_generator: ^3.0.0
   riverpod_lint: ^3.0.0
+  flutter_gen_runner: ^5.7.0
 
 flutter:
   uses-material-design: true
   assets:
-    - assets/svgs/bell.svg
-    - assets/svgs/calendar.svg
-    - assets/svgs/chevron_down.svg
-    - assets/svgs/dots_horizontal.svg
-    - assets/svgs/filter.svg
-    - assets/svgs/logo.svg
-    - assets/svgs/menu.svg
-    - assets/svgs/plus.svg
-    - assets/svgs/settings.svg
+    - assets/svgs/
+    - assets/images/
     - trips_mock.json
+
+flutter_gen:
+  output: lib/app/core/constants/
+  line_length: 100
+  integrations:
+    flutter_svg: true

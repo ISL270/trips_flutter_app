@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trips_flutter_app/app/core/constants/svg_assets.dart';
+import 'package:trips_flutter_app/app/core/constants/assets.gen.dart';
 import 'package:trips_flutter_app/app/core/widgets/circular_icon_button.dart';
 import 'package:trips_flutter_app/app/core/widgets/svg_icon.dart';
 import 'package:trips_flutter_app/app/core/widgets/vertical_divider_line.dart';
@@ -19,7 +19,7 @@ class WebContentSectionHeader extends StatelessWidget {
           Row(
             children: [
               // Filter button
-              CircularIconButton(iconPath: SvgAssets.filter, onPressed: () {}),
+              CircularIconButton(iconPath: Assets.svgs.filter.path, onPressed: () {}),
               // Vertical divider
               const VerticalDividerLine(),
               // Add button
@@ -37,7 +37,7 @@ class WebContentSectionHeader extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       SvgIcon(
-                        iconPath: SvgAssets.plus,
+                        iconPath: Assets.svgs.plus.path,
                         size: 20,
                         color: Theme.of(context).colorScheme.onPrimary,
                       ),

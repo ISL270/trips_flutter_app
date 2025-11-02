@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:trips_flutter_app/app/core/constants/assets.gen.dart';
 import 'package:trips_flutter_app/app/core/widgets/circular_icon_button.dart';
 
-import '../../../../../core/constants/svg_assets.dart';
 import '../../../../../core/widgets/svg_icon.dart';
 import '../../../domain/models/trip.dart';
 import '../../../domain/models/trip_dates.dart';
@@ -86,7 +86,7 @@ class _TripCoverImage extends StatelessWidget {
                     child: CircularIconButton(
                       diameter: 40,
                       onPressed: () {},
-                      iconPath: SvgAssets.dotsHorizontal,
+                      iconPath: Assets.svgs.dotsHorizontal.path,
                       backgroundColor: Theme.of(
                         context,
                       ).colorScheme.surfaceContainerHighest.withValues(alpha: 0.8),
@@ -115,7 +115,7 @@ class _TripCoverImage extends StatelessWidget {
                           if (trip.status != TripStatus.readyForTravel) ...[
                             const SizedBox(width: 8),
                             SvgIcon(
-                              iconPath: SvgAssets.chevronDown,
+                              iconPath: Assets.svgs.chevronDown.path,
                               size: 20,
                               color: Theme.of(context).colorScheme.onSurface,
                             ),
@@ -189,7 +189,7 @@ class _TripDateRange extends StatelessWidget {
 
     return Row(
       children: [
-        SvgIcon(iconPath: SvgAssets.calendar, size: 18, color: Colors.grey.shade500),
+        SvgIcon(iconPath: Assets.svgs.calendar.path, size: 18, color: Colors.grey.shade500),
         const SizedBox(width: 8),
         Expanded(
           child: Text(
