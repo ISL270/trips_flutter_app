@@ -5,8 +5,8 @@
       "status": "Proposal Sent",
       "title": "Banff National Park Adventure",
       "dates": {
-        "start": "16-01-2024",
-        "end": "20-01-2024"
+        "start": "05-02-2025",
+        "end": "12-02-2025"
       },
       "participants": [
         { "name": "James Clarke", "avatar_url": "https://avatar.iran.liara.run/public/boy?username=james1" },
@@ -24,8 +24,8 @@
       "status": "Pending Approval",
       "title": "Santorini Dream Escape",
       "dates": {
-        "start": "16-01-2024",
-        "end": "20-01-2024"
+        "start": "14-03-2025",
+        "end": "19-03-2025"
       },
       "participants": [
         { "name": "Lucas Martinez", "avatar_url": "https://avatar.iran.liara.run/public/boy?username=lucas2" },
@@ -33,7 +33,7 @@
         { "name": "Oliver Smith", "avatar_url": "https://avatar.iran.liara.run/public/boy?username=oliver9" },
         { "name": "Daniel Kim", "avatar_url": "https://avatar.iran.liara.run/public/boy?username=daniel10" }
       ],
-      "unfinished_tasks": 4,
+      "unfinished_tasks": 2,
       "cover_image": "https://images.unsplash.com/photo-1465156799763-2c087c332922?auto=format&fit=crop&w=800&q=80"
     },
     {
@@ -41,13 +41,13 @@
       "status": "Ready for travel",
       "title": "Maldives Island Retreat",
       "dates": {
-        "start": "16-01-2024",
-        "end": "20-01-2024"
+        "start": "22-04-2025",
+        "end": "01-05-2025"
       },
       "participants": [
         { "name": "Liam Wong", "avatar_url": "https://avatar.iran.liara.run/public/boy?username=liam4" }
       ],
-      "unfinished_tasks": 4,
+      "unfinished_tasks": 6,
       "cover_image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
     },
     {
@@ -55,8 +55,8 @@
       "status": "Proposal Sent",
       "title": "Paris Getaway",
       "dates": {
-        "start": "16-01-2024",
-        "end": "20-01-2024"
+        "start": "10-05-2025",
+        "end": "14-05-2025"
       },
       "participants": [
         { "name": "André Laurent", "avatar_url": "https://avatar.iran.liara.run/public/boy?username=andre7" },
@@ -70,8 +70,8 @@
       "status": "Pending Approval",
       "title": "Venice Canal Experience",
       "dates": {
-        "start": "16-01-2024",
-        "end": "20-01-2024"
+        "start": "18-06-2025",
+        "end": "24-06-2025"
       },
       "participants": [
         { "name": "Giovanni Greco", "avatar_url": "https://avatar.iran.liara.run/public/boy?username=giovanni11" },
@@ -81,7 +81,7 @@
         { "name": "Akira Sato", "avatar_url": "https://avatar.iran.liara.run/public/boy?username=akira15" },
         { "name": "Oliver Smith", "avatar_url": "https://avatar.iran.liara.run/public/boy?username=oliver9" }
       ],
-      "unfinished_tasks": 4,
+      "unfinished_tasks": 3,
       "cover_image": "https://images.unsplash.com/photo-1444065381814-865dc9da92c0?auto=format&fit=crop&w=800&q=80"
     },
     {
@@ -89,8 +89,8 @@
       "status": "Ready for travel",
       "title": "Tokyo City Lights Tour",
       "dates": {
-        "start": "16-01-2024",
-        "end": "20-01-2024"
+        "start": "08-07-2025",
+        "end": "15-07-2025"
       },
       "participants": [
         { "name": "Haruto Tanaka", "avatar_url": "https://avatar.iran.liara.run/public/boy?username=haruto16" },
@@ -99,16 +99,16 @@
         { "name": "Arjun Patel", "avatar_url": "https://avatar.iran.liara.run/public/boy?username=arjun19" },
         { "name": "William Wilson", "avatar_url": "https://avatar.iran.liara.run/public/boy?username=william20" }
       ],
-      "unfinished_tasks": 4,
-      "cover_image": "https://images.unsplash.com/photo-1462129487128-340e6b021fd7?auto=format&fit=crop&w=800&q=80"
+      "unfinished_tasks": 1,
+      "cover_image": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": "7",
       "status": "Pending Approval",
       "title": "New York Urban Adventure",
       "dates": {
-        "start": "16-01-2024",
-        "end": "20-01-2024"
+        "start": "25-08-2025",
+        "end": "29-08-2025"
       },
       "participants": [
         { "name": "James Anderson", "avatar_url": "https://avatar.iran.liara.run/public/boy?username=james23" },
