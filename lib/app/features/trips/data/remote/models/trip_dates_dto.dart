@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../domain/trip_dates.dart';
+import '../../../domain/models/trip_dates.dart';
 
 part 'trip_dates_dto.g.dart';
 

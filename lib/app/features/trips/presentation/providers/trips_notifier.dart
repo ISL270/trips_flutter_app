@@ -1,7 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../data/providers/trips_repository_provider.dart';
-import '../../domain/trip.dart';
+import '../../domain/models/trip.dart';
+import '../../domain/providers/trips_repository_provider.dart';
 
 part 'trips_notifier.g.dart';
 
@@ -11,17 +11,9 @@ class TripsState {
   final bool isLoading;
   final String? error;
 
-  const TripsState({
-    this.trips = const [],
-    this.isLoading = false,
-    this.error,
-  });
+  const TripsState({this.trips = const [], this.isLoading = false, this.error});
 
-  TripsState copyWith({
-    List<Trip>? trips,
-    bool? isLoading,
-    String? error,
-  }) {
+  TripsState copyWith({List<Trip>? trips, bool? isLoading, String? error}) {
     return TripsState(
       trips: trips ?? this.trips,
       isLoading: isLoading ?? this.isLoading,
@@ -47,15 +39,9 @@ class TripsNotifier extends _$TripsNotifier {
     try {
       final repository = ref.read(tripsRepositoryProvider);
       final trips = await repository.getTrips();
-      state = state.copyWith(
-        trips: trips,
-        isLoading: false,
-      );
+      state = state.copyWith(trips: trips, isLoading: false);
     } catch (e) {
-      state = state.copyWith(
-        isLoading: false,
-        error: e.toString(),
-      );
+      state = state.copyWith(isLoading: false, error: e.toString());
     }
   }
 

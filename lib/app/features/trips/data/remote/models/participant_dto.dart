@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../domain/participant.dart';
+import '../../../domain/models/participant.dart';
 
 part 'participant_dto.g.dart';
 

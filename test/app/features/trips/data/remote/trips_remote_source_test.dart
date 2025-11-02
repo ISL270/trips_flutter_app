@@ -2,10 +2,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:trips_flutter_app/app/features/trips/data/remote/trips_remote_source.dart';
-import 'package:trips_flutter_app/app/features/trips/domain/participant.dart';
-import 'package:trips_flutter_app/app/features/trips/domain/trip.dart';
-import 'package:trips_flutter_app/app/features/trips/domain/trip_dates.dart';
-import 'package:trips_flutter_app/app/features/trips/domain/trip_status.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/models/participant.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/models/trip.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/models/trip_dates.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/models/trip_status.dart';
 
 // Mock class for AssetBundle
 class MockAssetBundle extends Mock implements AssetBundle {}

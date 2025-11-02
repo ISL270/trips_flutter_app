@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
-import '../../domain/trip.dart';
-import 'trips_response_dto.dart';
+import '../../domain/models/trip.dart';
+import 'models/trips_response_dto.dart';
 
 /// Remote data source for trips
 /// Loads mock data from trips_mock.json asset

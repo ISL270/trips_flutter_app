@@ -5,9 +5,9 @@ import 'package:trips_flutter_app/app/core/widgets/circular_icon_button.dart';
 
 import '../../../../../core/constants/svg_assets.dart';
 import '../../../../../core/widgets/svg_icon.dart';
-import '../../../domain/trip.dart';
-import '../../../domain/trip_dates.dart';
-import '../../../domain/trip_status.dart';
+import '../../../domain/models/trip.dart';
+import '../../../domain/models/trip_dates.dart';
+import '../../../domain/models/trip_status.dart';
 import 'participant_avatars.dart';
 
 /// Responsive trip card widget that adapts to mobile and web layouts

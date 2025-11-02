@@ -1,5 +1,5 @@
 import '../data/remote/trips_remote_source.dart';
-import 'trip.dart';
+import 'models/trip.dart';
 
 /// Repository for managing trips data
 /// Concrete implementation that uses remote data source

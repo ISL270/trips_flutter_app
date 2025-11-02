@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../domain/trip.dart';
-import '../../domain/trip_status.dart';
+import '../../../domain/models/trip.dart';
+import '../../../domain/models/trip_status.dart';
 import 'participant_dto.dart';
 import 'trip_dates_dto.dart';
 

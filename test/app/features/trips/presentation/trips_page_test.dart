@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:trips_flutter_app/app/features/trips/domain/participant.dart';
-import 'package:trips_flutter_app/app/features/trips/domain/trip.dart';
-import 'package:trips_flutter_app/app/features/trips/domain/trip_dates.dart';
-import 'package:trips_flutter_app/app/features/trips/domain/trip_status.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/models/participant.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/models/trip.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/models/trip_dates.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/models/trip_status.dart';
 import 'package:trips_flutter_app/app/features/trips/presentation/providers/trips_notifier.dart';
 import 'package:trips_flutter_app/app/features/trips/presentation/trips_page.dart';
 
@@ -39,9 +39,7 @@ void main() {
     testWidgets('should display loading indicator when loading', (tester) async {
       await tester.pumpWidget(
         ProviderScope(
-          overrides: [
-            tripsProvider.overrideWithValue(const TripsState(isLoading: true)),
-          ],
+          overrides: [tripsProvider.overrideWithValue(const TripsState(isLoading: true))],
           child: const MaterialApp(home: TripsPage()),
         ),
       );
@@ -70,9 +68,7 @@ void main() {
       await tester.pumpWidget(
         ProviderScope(
           overrides: [
-            tripsProvider.overrideWithValue(
-              const TripsState(isLoading: false, trips: []),
-            ),
+            tripsProvider.overrideWithValue(const TripsState(isLoading: false, trips: [])),
           ],
           child: const MaterialApp(home: TripsPage()),
         ),
@@ -85,9 +81,7 @@ void main() {
       await tester.pumpWidget(
         ProviderScope(
           overrides: [
-            tripsProvider.overrideWithValue(
-              TripsState(isLoading: false, trips: mockTrips),
-            ),
+            tripsProvider.overrideWithValue(TripsState(isLoading: false, trips: mockTrips)),
           ],
           child: const MaterialApp(home: TripsPage()),
         ),
@@ -103,9 +97,7 @@ void main() {
       await tester.pumpWidget(
         ProviderScope(
           overrides: [
-            tripsProvider.overrideWithValue(
-              TripsState(isLoading: false, trips: mockTrips),
-            ),
+            tripsProvider.overrideWithValue(TripsState(isLoading: false, trips: mockTrips)),
           ],
           child: const MaterialApp(home: TripsPage()),
         ),
@@ -131,9 +123,7 @@ void main() {
       await tester.pumpWidget(
         ProviderScope(
           overrides: [
-            tripsProvider.overrideWithValue(
-              TripsState(isLoading: false, trips: manyTrips),
-            ),
+            tripsProvider.overrideWithValue(TripsState(isLoading: false, trips: manyTrips)),
           ],
           child: const MaterialApp(home: TripsPage()),
         ),

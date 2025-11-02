@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trips_flutter_app/app/core/widgets/profile_avatar.dart';
 
-import '../../../domain/participant.dart';
+import '../../../domain/models/participant.dart';
 
 /// Displays overlapping circular avatars for trip participants
 class ParticipantAvatars extends StatelessWidget {

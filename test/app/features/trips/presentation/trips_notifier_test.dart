@@ -1,11 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:trips_flutter_app/app/features/trips/data/providers/trips_repository_provider.dart';
-import 'package:trips_flutter_app/app/features/trips/domain/participant.dart';
-import 'package:trips_flutter_app/app/features/trips/domain/trip.dart';
-import 'package:trips_flutter_app/app/features/trips/domain/trip_dates.dart';
-import 'package:trips_flutter_app/app/features/trips/domain/trip_status.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/models/participant.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/models/trip.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/models/trip_dates.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/models/trip_status.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/providers/trips_repository_provider.dart';
 import 'package:trips_flutter_app/app/features/trips/domain/trips_repository.dart';
 import 'package:trips_flutter_app/app/features/trips/presentation/providers/trips_notifier.dart';
 
@@ -49,9 +49,7 @@ void main() {
     test('initial state should be loading', () {
       // Arrange
       final container = ProviderContainer(
-        overrides: [
-          tripsRepositoryProvider.overrideWithValue(mockRepository),
-        ],
+        overrides: [tripsRepositoryProvider.overrideWithValue(mockRepository)],
       );
       addTearDown(container.dispose);
 
@@ -72,9 +70,7 @@ void main() {
       return;
       // Arrange
       final container = ProviderContainer(
-        overrides: [
-          tripsRepositoryProvider.overrideWithValue(mockRepository),
-        ],
+        overrides: [tripsRepositoryProvider.overrideWithValue(mockRepository)],
       );
       addTearDown(container.dispose);
 
@@ -82,7 +78,7 @@ void main() {
 
       // Act - Read the provider to trigger build
       container.read(tripsProvider);
-      
+
       // Wait for async operations
       await Future.delayed(const Duration(milliseconds: 100));
 
@@ -102,9 +98,7 @@ void main() {
       return;
       // Arrange
       final container = ProviderContainer(
-        overrides: [
-          tripsRepositoryProvider.overrideWithValue(mockRepository),
-        ],
+        overrides: [tripsRepositoryProvider.overrideWithValue(mockRepository)],
       );
       addTearDown(container.dispose);
 
@@ -112,7 +106,7 @@ void main() {
 
       // Act - Read the provider to trigger build
       container.read(tripsProvider);
-      
+
       // Wait for async operations
       await Future.delayed(const Duration(milliseconds: 100));
 
@@ -130,9 +124,7 @@ void main() {
       return;
       // Arrange
       final container = ProviderContainer(
-        overrides: [
-          tripsRepositoryProvider.overrideWithValue(mockRepository),
-        ],
+        overrides: [tripsRepositoryProvider.overrideWithValue(mockRepository)],
       );
       addTearDown(container.dispose);
 
@@ -156,9 +148,7 @@ void main() {
       return;
       // Arrange
       final container = ProviderContainer(
-        overrides: [
-          tripsRepositoryProvider.overrideWithValue(mockRepository),
-        ],
+        overrides: [tripsRepositoryProvider.overrideWithValue(mockRepository)],
       );
       addTearDown(container.dispose);
 
@@ -167,7 +157,7 @@ void main() {
       // Act - Initial load
       container.read(tripsProvider);
       await Future.delayed(const Duration(milliseconds: 100));
-      
+
       // Act - Refresh
       final notifier = container.read(tripsProvider.notifier);
       await notifier.refresh();
@@ -186,23 +176,20 @@ void main() {
       return;
       // Arrange
       final container = ProviderContainer(
-        overrides: [
-          tripsRepositoryProvider.overrideWithValue(mockRepository),
-        ],
+        overrides: [tripsRepositoryProvider.overrideWithValue(mockRepository)],
       );
       addTearDown(container.dispose);
 
       // First call succeeds, second call fails
-      when(() => mockRepository.getTrips())
-          .thenAnswer((_) async => mockTrips);
+      when(() => mockRepository.getTrips()).thenAnswer((_) async => mockTrips);
 
       // Act - Initial load (succeeds)
       container.read(tripsProvider);
       await Future.delayed(const Duration(milliseconds: 100));
-      
+
       // Change mock behavior for refresh
       when(() => mockRepository.getTrips()).thenThrow(Exception('Refresh failed'));
-      
+
       // Act - Refresh (fails)
       final notifier = container.read(tripsProvider.notifier);
       await notifier.refresh();
@@ -220,9 +207,7 @@ void main() {
       return;
       // Arrange
       final container = ProviderContainer(
-        overrides: [
-          tripsRepositoryProvider.overrideWithValue(mockRepository),
-        ],
+        overrides: [tripsRepositoryProvider.overrideWithValue(mockRepository)],
       );
       addTearDown(container.dispose);
 
@@ -235,26 +220,21 @@ void main() {
       // Assert
       final state = container.read(tripsProvider);
       final newState = state.copyWith(isLoading: true);
-      
+
       // Original state should be unchanged
       expect(state.isLoading, false);
       expect(state.trips.length, 2);
-      
+
       // New state should have updated value
       expect(newState.isLoading, true);
       expect(newState.trips.length, 2);
     });
-
   });
 
   group('TripsState', () {
     test('copyWith should preserve values when not specified', () {
       // Arrange
-      const state = TripsState(
-        trips: [],
-        isLoading: true,
-        error: 'Some error',
-      );
+      const state = TripsState(trips: [], isLoading: true, error: 'Some error');
 
       // Act
       final newState = state.copyWith();

@@ -1,7 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../domain/trips_repository.dart';
-import '../remote/trips_remote_source.dart';
+import '../trips_repository.dart';
+import '../../data/remote/trips_remote_source.dart';
 
 part 'trips_repository_provider.g.dart';
 
