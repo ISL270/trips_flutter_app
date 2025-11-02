@@ -53,9 +53,7 @@ class ParticipantAvatars extends StatelessWidget {
           if (hasMore)
             Positioned(
               left: 3 * overlapOffset,
-              child: _RemainingParticipantsCircle(
-                count: participants.length - 3,
-              ),
+              child: _RemainingParticipantsCircle(count: participants.length - 3),
             ),
         ],
       ),
@@ -71,25 +69,20 @@ class ParticipantAvatars extends StatelessWidget {
 class _RemainingParticipantsCircle extends StatelessWidget {
   final int count;
 
-  const _RemainingParticipantsCircle({
-    required this.count,
-  });
+  const _RemainingParticipantsCircle({required this.count});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: ParticipantAvatars.avatarSize,
       height: ParticipantAvatars.avatarSize,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Colors.grey.shade800,
-      ),
+      decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.grey.shade800),
       child: Center(
         child: Text(
           '+$count',
-          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                color: Theme.of(context).colorScheme.primary,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.labelSmall?.copyWith(color: Theme.of(context).colorScheme.primary),
         ),
       ),
     );

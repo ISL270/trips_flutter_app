@@ -44,7 +44,7 @@ final class TripsNotifierProvider
   }
 }
 
-String _$tripsNotifierHash() => r'b5a606f6f5f70f75b11b1f2bc665fdadd52343a1';
+String _$tripsNotifierHash() => r'2262182141f94d31e3e57ae18735d777c0e188d6';
 
 /// Notifier for managing trips state
 

@@ -2,11 +2,12 @@ import 'package:equatable/equatable.dart';
 
 import 'participant.dart';
 import 'trip_dates.dart';
+import 'trip_status.dart';
 
 /// Domain entity representing a trip
 class Trip extends Equatable {
   final String id;
-  final String status;
+  final TripStatus status;
   final String title;
   final TripDates dates;
   final List<Participant> participants;
