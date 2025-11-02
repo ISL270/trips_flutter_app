@@ -63,7 +63,7 @@ lib/
 - **Assets**: `assets.gen.dart` via flutter_gen for type-safe asset access
 
 ### AI-Driven Tooling & Workflow
-- Leveraged next-gen, **AI-accelerated development environment** **(Windsurf)** throughout this project, pairing it with emerging engineering practices to boost throughput and streamline complex workflows.
+- Leveraged next-gen, **AI-accelerated development environment** **(Windsurf)** and **Model Context Protocol (MCP) servers** throughout this project, pairing them with emerging engineering practices to boost throughput and streamline complex workflows.
 
 ## Data Refinements (`trips_mock.json`)
 - Replaced the Tokyo trip cover image with a functioning Unsplash URL to avoid broken assets.
