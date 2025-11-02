@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
 /// A circular profile avatar widget with loading and error states.
 ///
@@ -35,11 +36,16 @@ class ProfileAvatar extends StatelessWidget {
           width: size,
           height: size,
           color: Colors.grey[300],
-          child: Center(
-            child: SizedBox(
-              width: size / 2,
-              height: size / 2,
-              child: const CircularProgressIndicator(strokeWidth: 2),
+          child: Shimmer.fromColors(
+            baseColor: Colors.grey[400]!,
+            highlightColor: Colors.grey[300]!,
+            child: Container(
+              width: size,
+              height: size,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white,
+              ),
             ),
           ),
         ),

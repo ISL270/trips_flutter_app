@@ -1,11 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:trips_flutter_app/app/core/constants/assets.gen.dart';
 import 'package:trips_flutter_app/app/core/widgets/circular_icon_button.dart';
+import 'package:trips_flutter_app/app/core/widgets/svg_icon.dart';
+import 'package:trips_flutter_app/app/features/trips/domain/models/trip.dart';
 
-import '../../../../../core/widgets/svg_icon.dart';
-import '../../../domain/models/trip.dart';
 import '../../../domain/models/trip_dates.dart';
 import '../../../domain/models/trip_status.dart';
 import 'participant_avatars.dart';
@@ -51,7 +52,11 @@ class _TripCoverImage extends StatelessWidget {
             fit: BoxFit.cover,
             placeholder: (context, url) => Container(
               color: Colors.grey[800],
-              child: const Center(child: CircularProgressIndicator()),
+              child: Shimmer.fromColors(
+                baseColor: Colors.grey[700]!,
+                highlightColor: Colors.grey[600]!,
+                child: Container(color: Colors.white),
+              ),
             ),
             errorWidget: (context, url, error) => Container(
               color: Colors.grey[800],
