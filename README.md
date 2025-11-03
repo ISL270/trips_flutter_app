@@ -15,7 +15,7 @@ A responsive trips management app built with Flutter, implementing a clean, feat
 
 ### [Try trips_flutter_app on GitHub Pages](https://isl270.github.io/trips_flutter_app/) 🚀
 
-<img src="assets/GIFs/demo.gif" alt="Trips App Demo" style="object-fit: cover;">
+<img src="assets/GIFs/responsive_design.gif" alt="Trips App Demo" style="object-fit: cover;">
 
 ## Features
 
