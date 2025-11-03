@@ -25,11 +25,11 @@ class MobileAppBar extends StatelessWidget implements PreferredSizeWidget {
               // Left section: Menu icon + Logo
               Row(
                 children: [
-                  // Menu icon (24×24px)
+                  // Menu icon
                   SvgIcon(iconPath: Assets.svgs.menu.path),
                   const SizedBox(width: 16),
-                  // Logo (82×40px)
-                  Assets.images.logo.image(width: 82, height: 40),
+                  // Logo
+                  Assets.images.smallLogo.image(height: 40),
                 ],
               ),
 

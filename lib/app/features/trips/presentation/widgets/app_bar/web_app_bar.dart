@@ -29,6 +29,7 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
 
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size.width);
     return Column(
       children: [
         Container(
@@ -39,7 +40,7 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // Logo (82×40px)
-              Assets.images.logo.image(width: 82, height: 40),
+              Assets.images.fullLogo.image(height: 40),
 
               // Right section: Icons + Profile
               Row(
@@ -53,7 +54,7 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
                     unselectedLabelColor: Theme.of(
                       context,
                     ).colorScheme.onSurface.withValues(alpha: 0.7),
-                    labelPadding: const EdgeInsets.symmetric(horizontal: 18),
+                    labelPadding: const EdgeInsets.symmetric(horizontal: 16),
                     indicatorColor: Theme.of(context).colorScheme.primary,
                     indicatorSize: TabBarIndicatorSize.label,
                     indicatorWeight: 2,
@@ -69,26 +70,26 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
 
                   // Vertical divider
                   const VerticalDividerLine(height: 40),
-                  const SizedBox(width: 8),
+                  const SizedBox(width: 6),
                   // Settings icon (24×24px)
                   SvgIcon(iconPath: Assets.svgs.settings.path),
 
-                  const SizedBox(width: 15),
+                  const SizedBox(width: 12),
 
                   // Bell icon (24×24px)
                   SvgIcon(iconPath: Assets.svgs.bell.path),
-                  const SizedBox(width: 10),
+                  const SizedBox(width: 8),
 
                   // Vertical divider
                   const VerticalDividerLine(height: 40),
-                  const SizedBox(width: 10),
+                  const SizedBox(width: 6),
                   // Profile section (124×32px)
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       // Profile avatar (32×32px)
                       const ProfileAvatar(
-                        size: 40,
+                        size: 35,
                         imageUrl: 'https://avatar.iran.liara.run/public/boy?username=user8',
                       ),
                       const SizedBox(width: 12),
@@ -97,7 +98,7 @@ class _WebAppBarState extends State<WebAppBar> with SingleTickerProviderStateMix
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Eslam Ashraf', style: Theme.of(context).textTheme.bodyMedium),
+                          Text('Eslam Ali', style: Theme.of(context).textTheme.bodyMedium),
                         ],
                       ),
                       const SizedBox(width: 8),

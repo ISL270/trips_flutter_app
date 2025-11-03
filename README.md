@@ -1,12 +1,23 @@
 # Trips Flutter App
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Dart-3.9.2-0175C2.svg?logo=dart&logoColor=white" alt="Dart">
-  <img src="https://img.shields.io/badge/Riverpod-3.0-15A6C7.svg" alt="Riverpod 3.0">
-  <img src="https://img.shields.io/badge/Material-3-673AB7.svg" alt="Material 3">
-  <img src="https://img.shields.io/badge/flutter__gen-Assets-3EAAAF.svg" alt="flutter_gen">
-  <img src="https://img.shields.io/badge/tests-26%20passing-brightgreen.svg" alt="Tests">
-  <img src="https://img.shields.io/badge/architecture-Clean%20Architecture-blue.svg" alt="Clean Architecture">
+  <table>
+    <tr>
+      <td>
+        <img src="assets/images/full_logo.png" alt="Logo" width="400" style="object-fit: cover;">
+      </td>
+      <td>
+        <div>
+          <img src="https://img.shields.io/badge/Dart-3.9.2-0175C2.svg?logo=dart&logoColor=white" alt="Dart">
+          <img src="https://img.shields.io/badge/Riverpod-3.0-15A6C7.svg" alt="Riverpod 3.0">
+          <img src="https://img.shields.io/badge/Material-3-673AB7.svg" alt="Material 3">
+          <img src="https://img.shields.io/badge/flutter__gen-Assets-3EAAAF.svg" alt="flutter_gen">
+          <img src="https://img.shields.io/badge/tests-26%20passing-brightgreen.svg" alt="Tests">
+          <img src="https://img.shields.io/badge/architecture-Clean%20Architecture-blue.svg" alt="Clean Architecture">
+        </div>
+      </td>
+    </tr>
+  </table>
 </div>
 
 A responsive trips management app built with Flutter, implementing a clean, feature-first architecture and modern state management via Riverpod 3.0 with code generation. The UI follows Material 3, uses type-safe assets via flutter_gen, and adapts gracefully between mobile and desktop layouts.

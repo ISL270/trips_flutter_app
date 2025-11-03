@@ -49,7 +49,7 @@ flutter_gen:
 # Flutter Native Splash Configuration
 flutter_native_splash:
   color: "#000000"  # Background color: 0xFF000000
-  image: assets/images/logo.png
+  image: assets/images/small_logo.png
   web: true
   android: true
   ios: true
@@ -60,10 +60,10 @@ flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   remove_alpha_ios: true
-  image_path: "assets/images/logo.png"
+  image_path: "assets/images/small_logo.png"
   min_sdk_android: 21
   adaptive_icon_background: "#000000"
-  adaptive_icon_foreground: "assets/images/logo.png"
+  adaptive_icon_foreground: "assets/images/small_logo.png"
   web:
     generate: true
-    image_path: "assets/images/logo.png"
+    image_path: "assets/images/small_logo.png"
